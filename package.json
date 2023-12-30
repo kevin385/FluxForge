@@ -2,7 +2,14 @@
   "name": "fluxforge",
   "packageManager": "yarn@4.0.2",
   "private": true,
+  "scripts": {
+    "prettier": "yarn prettier . --write"
+  },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "3.1.1",
+    "typescript": "^5.3.3"
+  }
 }
