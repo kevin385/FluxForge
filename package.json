@@ -3,6 +3,8 @@
   "packageManager": "yarn@4.0.2",
   "private": true,
   "scripts": {
+    "dev:web": "cd packages/web && yarn dev",
+    "dev:api": "cd packages/web && yarn start:dev",
     "prettier": "yarn prettier . --write"
   },
   "workspaces": [
