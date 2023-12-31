@@ -1,5 +1,5 @@
-import { Header } from './components/Layout/Header';
-import { Footer } from './components/Layout/Footer';
+import { Footer, Header } from "./components";
+
 
 const App = () => {
   return (
