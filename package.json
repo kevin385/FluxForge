@@ -1,17 +1,22 @@
 {
-  "name": "fluxforge",
-  "packageManager": "yarn@4.0.2",
-  "private": true,
+  "name": "flux-forge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev:web": "cd packages/web && yarn dev",
-    "dev:api": "cd packages/web && yarn start:dev",
-    "prettier": "yarn prettier . --write"
+    "build": "pnpm --filter @fluxforge/* build",
+    "dev": "sst dev",
+    "build:api": "sst build",
+    "unlock": "sst unlock",
+    "refresh": "sst refresh"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sst": "ion"
+  },
   "devDependencies": {
-    "prettier": "3.1.1",
-    "typescript": "^5.3.3"
+    "@cloudflare/workers-types": "4.20240806.0"
   }
 }
