@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@fluxforge/core": "workspace:*"
+    "@fluxforge/core": "workspace:*",
+    "hono": "^4.5.5"
   }
 }

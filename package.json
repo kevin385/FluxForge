@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "pnpm --filter @fluxforge/* build",
     "dev": "sst dev",
-    "build": "pnpm --filter @fluxforge/* build"
+    "build:api": "sst build",
+    "unlock": "sst unlock",
+    "refresh": "sst refresh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sst": "^0.1.90"
+    "sst": "ion"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20240806.0"
   }
 }

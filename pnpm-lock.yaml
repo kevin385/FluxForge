@@ -9,14 +9,21 @@ importers:
   .:
     dependencies:
       sst:
-        specifier: ^0.1.90
-        version: 0.1.90
+        specifier: ion
+        version: 0.1.90(hono@4.5.5)
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20240806.0
+        version: 4.20240806.0
 
   packages/api:
     dependencies:
       '@fluxforge/core':
         specifier: workspace:*
         version: link:../core
+      hono:
+        specifier: ^4.5.5
+        version: 4.5.5
 
   packages/core: {}
 
@@ -140,6 +147,9 @@ packages:
 
   '@aws-sdk/util-utf8-browser@3.259.0':
     resolution: {integrity: sha512-UvFa/vR+e19XookZF8RzFZBrw2EUkQWxiBW0yYQAhvk3C+QVGl0H3ouca8LDBlBfQKXwmW3huo/59H8rwb1wJw==}
+
+  '@cloudflare/workers-types@4.20240806.0':
+    resolution: {integrity: sha512-8lvgrwXGTZEBsUQJ8YUnMk72Anh9omwr6fqWLw/EwVgcw1nQxs/bfdadBEbdP48l9fWXjE4E5XERLUrrFuEpsg==}
 
   '@smithy/abort-controller@2.2.0':
     resolution: {integrity: sha512-wRlta7GuLWpTqtFfGo+nZyOO1vEvewdNR1R4rTxpC8XU6vG/NDyrFBhwLZsqg1NUoR1noVaXJPC/7ZK47QCySw==}
@@ -325,6 +335,10 @@ packages:
   fast-xml-parser@4.2.5:
     resolution: {integrity: sha512-B9/wizE4WngqQftFPmdaMYlXoJlJOYxGQOanC77fq9k8+Z0v5dDSVh+3glErdIROP//s/jgb7ZuxKfB8nVyo0g==}
     hasBin: true
+
+  hono@4.5.5:
+    resolution: {integrity: sha512-fXBXHqaVfimWofbelLXci8pZyIwBMkDIwCa4OwZvK+xVbEyYLELVP4DfbGaj1aEM6ZY3hHgs4qLvCO2ChkhgQw==}
+    engines: {node: '>=16.0.0'}
 
   jose@4.15.9:
     resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==}
@@ -771,6 +785,8 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
+  '@cloudflare/workers-types@4.20240806.0': {}
+
   '@smithy/abort-controller@2.2.0':
     dependencies:
       '@smithy/types': 2.12.0
@@ -1065,6 +1081,8 @@ snapshots:
     dependencies:
       strnum: 1.0.5
 
+  hono@4.5.5: {}
+
   jose@4.15.9: {}
 
   jose@5.2.3: {}
@@ -1099,13 +1117,14 @@ snapshots:
   sst-linux-x86@0.1.90:
     optional: true
 
-  sst@0.1.90:
+  sst@0.1.90(hono@4.5.5):
     dependencies:
       '@aws-sdk/client-lambda': 3.478.0
       aws4fetch: 1.0.19
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
+      hono: 4.5.5
       sst-darwin-arm64: 0.1.90
       sst-darwin-x64: 0.1.90
       sst-linux-arm64: 0.1.90
