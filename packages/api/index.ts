@@ -1,7 +1,5 @@
 import { Hono } from "hono";
 
-const app = new Hono().get("/", async (c) =>
-  c.json({ message: "Hello From Cloudflare Worker." })
-);
+const app = new Hono().get("/", async c => c.json({ message: "Hello From Cloudflare Worker." }));
 
 export default app;
