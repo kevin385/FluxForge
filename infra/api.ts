@@ -1,5 +1,6 @@
-export const api = () =>
-  new sst.cloudflare.Worker("Hono", {
+export const api = (db: sst.cloudflare.D1, bucket: sst.cloudflare.Bucket) =>
+  new sst.cloudflare.Worker("API", {
     url: true,
     handler: "packages/api/index.ts",
+    link: [db, bucket]
   });

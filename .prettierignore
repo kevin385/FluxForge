@@ -1,0 +1,17 @@
+# Ignore directories
+**/build/**
+**/node_modules/**
+build
+coverage
+dist
+build
+packages/core/src/providers/db/migrations
+
+# Ignore specific files
+pnpm-lock.yaml
+cdk.out
+.build
+.sst
+
+# Ignore all .d.ts files
+**/*.d.ts

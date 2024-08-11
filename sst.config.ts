@@ -6,14 +6,16 @@ export default $config({
     return {
       name: "fluxforge",
       removal: input?.stage === "production" ? "retain" : "remove",
-      home: "cloudflare",
+      home: "cloudflare"
     };
   },
   async run() {
-    const hono = infra.api();
+    const db = infra.db();
+    const bucket = infra.bucket();
+    const api = infra.api(db, bucket);
 
     return {
-      api: hono.url,
+      api: api.url
     };
-  },
+  }
 });
