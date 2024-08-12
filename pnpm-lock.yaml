@@ -10,7 +10,7 @@ importers:
     dependencies:
       sst:
         specifier: ion
-        version: 0.1.90(hono@4.5.5)
+        version: 0.1.93(hono@4.5.5)
     devDependencies:
       '@cloudflare/workers-types':
         specifier: 4.20240806.0
@@ -18,6 +18,9 @@ importers:
       prettier:
         specifier: 3.3.3
         version: 3.3.3
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
 
   packages/api:
     dependencies:
@@ -369,33 +372,33 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  sst-darwin-arm64@0.1.90:
-    resolution: {integrity: sha512-CMPMMfp+fdLzvX9VAoCcAqgJATyTGk3NUjfmaWbB4IuzB1DL6b6Ofy08kT3Nr4pody/vZTqOzUyY9BJE9bMgWg==}
+  sst-darwin-arm64@0.1.93:
+    resolution: {integrity: sha512-xSynGNXOq8BJPpywo2NUbTrTEcExSOhvvrAnBLX3LzRy966dgT9iSlRxJBb1+ypPkzWqQGv+MeEfnYGFd3qNfw==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@0.1.90:
-    resolution: {integrity: sha512-LevyxyxEOJIu9FkSqyLDEA0WBmB52jB4lW3PIQzXnghpcSTnZXQ3yYm+AWh8iVYIuZzqtmFwAwVViKsQIZ/5rA==}
+  sst-darwin-x64@0.1.93:
+    resolution: {integrity: sha512-DyM4mlvOxwshSnCfg65XbNX7tZdyPZg0tiEgSJi5XAooQltyQ2h90GdcaWki4rTn3IEs05drwzPlCNNZJIADxA==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@0.1.90:
-    resolution: {integrity: sha512-RyBBl8xgeypEJgJIB9YVnK1kkUABTvQUzWJRl4OZ2Km0+I1RG3oNiaXwFRu236E7JMhM66eo+PrrXtt3CQrK5Q==}
+  sst-linux-arm64@0.1.93:
+    resolution: {integrity: sha512-Mo3ymb11kxHeHGM0MUAzpq/qcFCwXDNFp5JxV25AszYLZpIhOXCbwralgOxik2eLQSJe6ynJ591XLpLINlSxPA==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@0.1.90:
-    resolution: {integrity: sha512-DKP6RPRpgtEQKGULPKmjmrMu3++YlQ513vpMptyR7LFn9xLlaeC3Ku+FvvBWtkyNlI8kJ2x6wNIcEkfstwrjgA==}
+  sst-linux-x64@0.1.93:
+    resolution: {integrity: sha512-v3QEsr+AE9UHztMhiWUC9Ut6bKgmcTbNFm1FPmQz738snePoZQc0EfeM75tOMMK2m1n+tI7KNT441ZY+vqO+uw==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@0.1.90:
-    resolution: {integrity: sha512-fh8qTHQT4s3a3EPvhYXiI99Z18x26mARJeOBLn8aAgHZZd5jt01AYOxiwXM+9MwQsQg749n3tHA6aqoxsgKGtA==}
+  sst-linux-x86@0.1.93:
+    resolution: {integrity: sha512-Wjrvxru/yGRagrwKwVqhbaHPC2CvfWv2cnLBln7kj+fCWyOGZKRzLk1jajoXyqe3AGnn3NYI1NAzfiuSYCg9lg==}
     cpu: [x86]
     os: [linux]
 
-  sst@0.1.90:
-    resolution: {integrity: sha512-9zlgpTRoEzTs6XFAbE0A+iNaK4+VkLpzLb0o1e1iCzCInzVfI+vpRooxL0cBvBO7NIFLeB+g3IAVzGlfV46jFg==}
+  sst@0.1.93:
+    resolution: {integrity: sha512-Uxvr1/i/yHX6IkuScXiFFAHGbkTrpnI1MMgu+3z6jeffBjv9t7dksTkXKvTGWZ1+jfI618qbIoA26GKzhLi5pg==}
     hasBin: true
     peerDependencies:
       hono: 4.x
@@ -414,6 +417,11 @@ packages:
 
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
@@ -1112,22 +1120,22 @@ snapshots:
 
   prettier@3.3.3: {}
 
-  sst-darwin-arm64@0.1.90:
+  sst-darwin-arm64@0.1.93:
     optional: true
 
-  sst-darwin-x64@0.1.90:
+  sst-darwin-x64@0.1.93:
     optional: true
 
-  sst-linux-arm64@0.1.90:
+  sst-linux-arm64@0.1.93:
     optional: true
 
-  sst-linux-x64@0.1.90:
+  sst-linux-x64@0.1.93:
     optional: true
 
-  sst-linux-x86@0.1.90:
+  sst-linux-x86@0.1.93:
     optional: true
 
-  sst@0.1.90(hono@4.5.5):
+  sst@0.1.93(hono@4.5.5):
     dependencies:
       '@aws-sdk/client-lambda': 3.478.0
       aws4fetch: 1.0.19
@@ -1135,11 +1143,11 @@ snapshots:
       openid-client: 5.6.4
     optionalDependencies:
       hono: 4.5.5
-      sst-darwin-arm64: 0.1.90
-      sst-darwin-x64: 0.1.90
-      sst-linux-arm64: 0.1.90
-      sst-linux-x64: 0.1.90
-      sst-linux-x86: 0.1.90
+      sst-darwin-arm64: 0.1.93
+      sst-darwin-x64: 0.1.93
+      sst-linux-arm64: 0.1.93
+      sst-linux-x64: 0.1.93
+      sst-linux-x86: 0.1.93
     transitivePeerDependencies:
       - aws-crt
 
@@ -1148,6 +1156,8 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.6.3: {}
+
+  typescript@5.5.4: {}
 
   uuid@9.0.1: {}
 
