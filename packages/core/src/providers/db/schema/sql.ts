@@ -1,84 +1,115 @@
-import { pgTable, serial, varchar, text, integer, timestamp, pgEnum } from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm";
-
-// Enums
-export const genreEnum = ["rock", "pop", "hip_hop", "electronic", "classical", "jazz", "country", "other"] as const;
+import { sqliteTable, text, integer, primaryKey } from "drizzle-orm/sqlite-core";
+import { relations, sql } from "drizzle-orm";
 
 // Artists table
-export const artists = pgTable("artists", {
-  id: serial("id").primaryKey(),
-  name: varchar("name", { length: 255 }).notNull(),
+export const artists = sqliteTable("artists", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  name: text("name").notNull(),
   bio: text("bio"),
   formedYear: integer("formed_year"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text("updated_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`)
 });
 
 // Albums table
-export const albums = pgTable("albums", {
-  id: serial("id").primaryKey(),
-  title: varchar("title", { length: 255 }).notNull(),
+export const albums = sqliteTable("albums", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  title: text("title").notNull(),
   releaseYear: integer("release_year").notNull(),
-  genre: text("genre", { enum: genreEnum }),
-  coverArtUrl: varchar("cover_art_url", { length: 255 }),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  genre: text("genre"),
+  coverArtUrl: text("cover_art_url"),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text("updated_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`)
 });
 
 // Songs table
-export const songs = pgTable("songs", {
-  id: serial("id").primaryKey(),
-  title: varchar("title", { length: 255 }).notNull(),
+export const songs = sqliteTable("songs", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  title: text("title").notNull(),
   albumId: integer("album_id").references(() => albums.id),
   trackNumber: integer("track_number"),
   duration: integer("duration"), // Duration in seconds
-  filePath: varchar("file_path", { length: 255 }).notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  filePath: text("file_path").notNull(),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text("updated_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`)
 });
 
 // Artist-Album relation (for various artist albums)
-export const artistAlbums = pgTable("artist_albums", {
-  id: serial("id").primaryKey(),
-  artistId: integer("artist_id")
-    .references(() => artists.id)
-    .notNull(),
-  albumId: integer("album_id")
-    .references(() => albums.id)
-    .notNull()
-});
+export const artistAlbums = sqliteTable(
+  "artist_albums",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    artistId: integer("artist_id")
+      .references(() => artists.id)
+      .notNull(),
+    albumId: integer("album_id")
+      .references(() => albums.id)
+      .notNull()
+  },
+  table => ({
+    pk: primaryKey({ columns: [table.artistId, table.albumId] })
+  })
+);
 
 // Artist-Song relation (for collaborations)
-export const artistSongs = pgTable("artist_songs", {
-  id: serial("id").primaryKey(),
-  artistId: integer("artist_id")
-    .references(() => artists.id)
-    .notNull(),
-  songId: integer("song_id")
-    .references(() => songs.id)
-    .notNull()
-});
+export const artistSongs = sqliteTable(
+  "artist_songs",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    artistId: integer("artist_id")
+      .references(() => artists.id)
+      .notNull(),
+    songId: integer("song_id")
+      .references(() => songs.id)
+      .notNull()
+  },
+  table => ({
+    pk: primaryKey({ columns: [table.artistId, table.songId] })
+  })
+);
 
 // Playlists table
-export const playlists = pgTable("playlists", {
-  id: serial("id").primaryKey(),
-  name: varchar("name", { length: 255 }).notNull(),
+export const playlists = sqliteTable("playlists", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  name: text("name").notNull(),
   description: text("description"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text("updated_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`)
 });
 
 // Playlist-Song relation
-export const playlistSongs = pgTable("playlist_songs", {
-  id: serial("id").primaryKey(),
-  playlistId: integer("playlist_id")
-    .references(() => playlists.id)
-    .notNull(),
-  songId: integer("song_id")
-    .references(() => songs.id)
-    .notNull(),
-  order: integer("order").notNull()
-});
+export const playlistSongs = sqliteTable(
+  "playlist_songs",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    playlistId: integer("playlist_id")
+      .references(() => playlists.id)
+      .notNull(),
+    songId: integer("song_id")
+      .references(() => songs.id)
+      .notNull(),
+    order: integer("order").notNull()
+  },
+  table => ({
+    pk: primaryKey({ columns: [table.playlistId, table.songId] })
+  })
+);
 
 // Relations
 export const artistsRelations = relations(artists, ({ many }) => ({
