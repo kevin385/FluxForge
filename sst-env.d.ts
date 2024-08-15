@@ -3,6 +3,18 @@
 import "sst"
 declare module "sst" {
   export interface Resource {
+    "CloudflareAccountId": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "CloudflareApiToken": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "DatabaseId": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
   }
 }
 // cloudflare 

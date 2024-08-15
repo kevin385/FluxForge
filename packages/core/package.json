@@ -1,4 +1,7 @@
 {
   "name": "@fluxforge/core",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "drizzle-orm": "^0.33.0"
+  }
 }
