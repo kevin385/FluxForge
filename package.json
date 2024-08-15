@@ -4,19 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prettier": "pnpm exec prettier . --write",
     "build": "pnpm --filter @fluxforge/* build",
     "dev": "sst dev",
     "build:api": "sst build",
     "unlock": "sst unlock",
-    "refresh": "sst refresh"
+    "refresh": "sst refresh",
+    "db": "sst shell drizzle-kit",
+    "db:generate": "sst shell drizzle-kit generate",
+    "db:migrate": "sst shell drizzle-kit migrate",
+    "db:studio": "sst shell drizzle-kit studio",
+    "prettier:check": "pnpm exec prettier . --check",
+    "prettier": "pnpm exec prettier . --write"
   },
   "dependencies": {
     "sst": "ion"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240806.0",
-    "typescript": "^5.5.4",
-    "prettier": "3.3.3"
+    "drizzle-kit": "^0.24.0",
+    "prettier": "3.3.3",
+    "typescript": "^5.5.4"
   }
 }
