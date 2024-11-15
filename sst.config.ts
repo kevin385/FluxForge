@@ -20,8 +20,11 @@ export default $config({
 
     const api = infra.api(db, bucket, secrets);
 
+    infra.web();
+
     return {
-      api: api.url
+      api: api.url,
+      web: "https://localhost:3000"
     };
   }
 });
