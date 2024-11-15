@@ -6,6 +6,7 @@
   "scripts": {
     "build": "pnpm --filter @fluxforge/* build",
     "dev": "sst dev",
+    "dev:web": "cd packages/web && pnpm dev",
     "build:api": "sst build",
     "unlock": "sst unlock",
     "refresh": "sst refresh",

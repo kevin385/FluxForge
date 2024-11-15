@@ -1,8 +1,18 @@
 {
-  "name": "@fluxforge/web",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "serve out"
+  },
   "dependencies": {
-    "@fluxforge/core": "workspace:*"
+    "@types/node": "^18.11.5",
+    "@types/react-dom": "^18.0.7",
+    "@types/react": "^18.0.23",
+    "next": "latest",
+    "react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "serve": "^14.2.0",
+    "typescript": "^4.8.4"
   }
 }
