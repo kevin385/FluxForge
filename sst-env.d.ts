@@ -7,10 +7,6 @@ export {}
 import "sst"
 declare module "sst" {
   export interface Resource {
-    "API_VERSION": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
     "CLOUDFLARE_ACCOUNT_ID": {
       "type": "sst.sst.Secret"
       "value": string

@@ -10,10 +10,6 @@ declare module "sst" {
       "type": "sst.cloudflare.Worker"
       "url": string
     }
-    "API_VERSION": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
     "CLOUDFLARE_ACCOUNT_ID": {
       "type": "sst.sst.Secret"
       "value": string

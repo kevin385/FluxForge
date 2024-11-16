@@ -33,6 +33,9 @@ importers:
       '@fluxforge/core':
         specifier: workspace:*
         version: link:../core
+      '@hono/swagger-ui':
+        specifier: 0.4.1
+        version: 0.4.1(hono@4.6.10)
       '@hono/zod-openapi':
         specifier: 0.17.0
         version: 0.17.0(hono@4.6.10)(zod@3.23.8)
@@ -367,6 +370,11 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@hono/swagger-ui@0.4.1':
+    resolution: {integrity: sha512-kPaJatHffeYQ3yVkHo878hCqwfapqx54FczJVJ+eRWt8J4biyVVMIdCAJb6MyA8bcnHUoTmUpPc7OJAV1VTg2g==}
+    peerDependencies:
+      hono: '*'
 
   '@hono/zod-openapi@0.17.0':
     resolution: {integrity: sha512-Ed6U/6cbCOBQYl0N3E94Q9UKAT5eg+x1RtShGU9OERH9ZM/SYMSLk2Biu8Eba2myu7MuzDsne9rVLrUpno1GnA==}
@@ -1406,6 +1414,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.19.12':
     optional: true
+
+  '@hono/swagger-ui@0.4.1(hono@4.6.10)':
+    dependencies:
+      hono: 4.6.10
 
   '@hono/zod-openapi@0.17.0(hono@4.6.10)(zod@3.23.8)':
     dependencies:

@@ -18,7 +18,7 @@ export default $config({
 
     const api = infra.api(db, bucket, secrets);
 
-    infra.web();
+    infra.web(api);
 
     return {
       api: api.url,
