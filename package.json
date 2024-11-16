@@ -18,10 +18,11 @@
     "prettier": "pnpm exec prettier . --write"
   },
   "dependencies": {
-    "sst": "ion"
+    "sst": "3.3.22",
+    "hono": "^4.6.10"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240806.0",
+    "@cloudflare/workers-types": "^4.20241112.0",
     "drizzle-kit": "^0.24.0",
     "prettier": "3.3.3",
     "typescript": "^5.5.4"

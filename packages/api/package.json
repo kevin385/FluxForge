@@ -4,6 +4,6 @@
   "main": "index.js",
   "dependencies": {
     "@fluxforge/core": "workspace:*",
-    "hono": "^4.5.5"
+    "@hono/zod-openapi": "0.17.0"
   }
 }
