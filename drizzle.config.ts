@@ -5,9 +5,9 @@ export default defineConfig({
   driver: "d1-http",
   dialect: "sqlite",
   dbCredentials: {
-    accountId: Resource.CloudflareAccountId.value,
-    databaseId: Resource.DatabaseId.value,
-    token: Resource.CloudflareApiToken.value
+    accountId: Resource.CLOUDFLARE_ACCOUNT_ID.value,
+    databaseId: Resource.DATABASE_ID.value,
+    token: Resource.CLOUDFLARE_API_TOKEN.value
   },
   schema: ["./packages/core/src/providers/db/schema/sql.ts"],
   out: "./packages/core/src/providers/db/migrations"

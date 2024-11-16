@@ -13,14 +13,12 @@ export default $config({
     const db = infra.db();
     const bucket = infra.bucket();
 
-    const databaseId = db.id.apply(id => new sst.Secret("DatabaseId", id));
-    const cloudflareAccountId = new sst.Secret("CloudflareAccountId", sst.cloudflare.DEFAULT_ACCOUNT_ID);
-    const cloudflareApiToken = new sst.Secret("CloudflareApiToken", process.env.CLOUDFLARE_API_TOKEN);
-    const secrets = [databaseId, cloudflareAccountId, cloudflareApiToken] as sst.Secret[];
+    const DATABASE_ID = db.id.apply(id => new sst.Secret("DATABASE_ID", id));
+    const secrets = [DATABASE_ID, ...infra.secrets(process.env)] as sst.Secret[];
 
     const api = infra.api(db, bucket, secrets);
 
-    infra.web();
+    infra.web(api);
 
     return {
       api: api.url,
