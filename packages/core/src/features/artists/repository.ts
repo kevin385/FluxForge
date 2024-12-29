@@ -1,12 +1,11 @@
-import { ArtistsTable, DB } from "../../providers/db/types";
+import { initializeDb } from "../../providers";
+import { ArtistsTable } from "../../providers/db/types";
 
 export class ArtistsRepository {
-  constructor(
-    private db: DB,
-    private artists: ArtistsTable
-  ) {}
+  constructor(private artists: ArtistsTable) {}
 
   getArtists = async () => {
-    return this.db.select().from(this.artists);
+    const db = initializeDb();
+    return db.select().from(this.artists);
   };
 }

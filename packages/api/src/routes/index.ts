@@ -1,5 +1,6 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { MiddlewareHandler } from "hono";
+import artists from "./artists";
 
 interface RoutesListTypes {
   endpoint: string;
@@ -20,4 +21,9 @@ export const setupRoutes = () => {
   return routes;
 };
 
-const routesList: RoutesListTypes[] = [];
+const routesList: RoutesListTypes[] = [
+  {
+    endpoint: "/artists",
+    router: artists
+  }
+];

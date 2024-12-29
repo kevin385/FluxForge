@@ -1,17 +1,8 @@
 {
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "module": "esnext",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@fluxforge/core/*": ["../core/src/*", "../core/dist/src/*"]
-    }
-  },
-  "references": [{ "path": "../core" }]
+    "moduleResolution": "bundler",
+    "lib": ["dom", "dom.iterable", "esnext"]
+  }
 }

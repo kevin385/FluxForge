@@ -20,9 +20,6 @@ export default $config({
 
     infra.web(api);
 
-    return {
-      api: api.url,
-      web: "https://localhost:3000"
-    };
+    return { api: api.url };
   }
 });
