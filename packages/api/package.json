@@ -1,10 +1,10 @@
 {
   "name": "@fluxforge/api",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.0",
   "dependencies": {
     "@fluxforge/core": "workspace:*",
-    "@hono/zod-openapi": "0.17.0",
-    "@hono/swagger-ui": "0.4.1"
+    "sst": "*",
+    "@hono/zod-openapi": "^0.18.3",
+    "@hono/swagger-ui": "^0.5.0"
   }
 }

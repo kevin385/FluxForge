@@ -50,7 +50,6 @@ export const songs = sqliteTable("songs", {
 export const artistAlbums = sqliteTable(
   "artist_albums",
   {
-    id: integer("id").primaryKey({ autoIncrement: true }),
     artistId: integer("artist_id")
       .references(() => artists.id)
       .notNull(),
@@ -58,16 +57,13 @@ export const artistAlbums = sqliteTable(
       .references(() => albums.id)
       .notNull()
   },
-  table => ({
-    pk: primaryKey({ columns: [table.artistId, table.albumId] })
-  })
+  table => [primaryKey({ columns: [table.artistId, table.albumId] })]
 );
 
 // Artist-Song relation (for collaborations)
 export const artistSongs = sqliteTable(
   "artist_songs",
   {
-    id: integer("id").primaryKey({ autoIncrement: true }),
     artistId: integer("artist_id")
       .references(() => artists.id)
       .notNull(),
@@ -75,9 +71,7 @@ export const artistSongs = sqliteTable(
       .references(() => songs.id)
       .notNull()
   },
-  table => ({
-    pk: primaryKey({ columns: [table.artistId, table.songId] })
-  })
+  table => [primaryKey({ columns: [table.artistId, table.songId] })]
 );
 
 // Playlists table
@@ -97,7 +91,6 @@ export const playlists = sqliteTable("playlists", {
 export const playlistSongs = sqliteTable(
   "playlist_songs",
   {
-    id: integer("id").primaryKey({ autoIncrement: true }),
     playlistId: integer("playlist_id")
       .references(() => playlists.id)
       .notNull(),
@@ -106,9 +99,7 @@ export const playlistSongs = sqliteTable(
       .notNull(),
     order: integer("order").notNull()
   },
-  table => ({
-    pk: primaryKey({ columns: [table.playlistId, table.songId] })
-  })
+  table => [primaryKey({ columns: [table.playlistId, table.songId] })]
 );
 
 // Relations
