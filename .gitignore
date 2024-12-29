@@ -1,5 +1,12 @@
 # dependencies
 node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # sst
 .sst
@@ -10,12 +17,12 @@ node_modules
 
 # misc
 .DS_Store
+*.pem
 
 # build
 dist
 dist-ssr
 *.local
-
 
 # local env files
 .env*.local
@@ -36,3 +43,20 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# testing
+/coverage
+
+# next.js
+**/.next/
+out/
+
+# production
+/build
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
