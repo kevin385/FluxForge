@@ -11,6 +11,8 @@ export default $config({
   },
   async run() {
     const db = infra.db();
+    infra.studio(db);
+
     const bucket = infra.bucket();
 
     const DATABASE_ID = db.id.apply(id => new sst.Secret("DATABASE_ID", id));
@@ -20,6 +22,6 @@ export default $config({
 
     infra.web(api);
 
-    return { api: api.url };
+    return { API: api.url };
   }
 });

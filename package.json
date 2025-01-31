@@ -10,6 +10,8 @@
     "build": "pnpm --filter @fluxforge/* build",
     "dev": "sst dev",
     "dev:web": "cd packages/web && pnpm dev",
+    "build:web": "cd packages/web && pnpm build",
+    "start:web": "cd packages/web && pnpm start",
     "deploy": "sst deploy",
     "unlock": "sst unlock",
     "refresh": "sst refresh",
@@ -21,11 +23,11 @@
     "prettier": "pnpm exec prettier . --write"
   },
   "dependencies": {
-    "sst": "^3.4.32",
+    "sst": "^3.6.40",
     "hono": "^4.6.15"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241224.0",
+    "@cloudflare/workers-types": "^4.20250129.0",
     "@tsconfig/node22": "^22.0.0",
     "drizzle-kit": "^0.30.1",
     "prettier": "^3.4.2",
