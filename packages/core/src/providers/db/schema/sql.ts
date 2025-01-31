@@ -1,5 +1,5 @@
 import { sqliteTable, text, integer, primaryKey } from "drizzle-orm/sqlite-core";
-import { relations, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 
 // Artists table
 export const artists = sqliteTable("artists", {
@@ -101,27 +101,3 @@ export const playlistSongs = sqliteTable(
   },
   table => [primaryKey({ columns: [table.playlistId, table.songId] })]
 );
-
-// Relations
-export const artistsRelations = relations(artists, ({ many }) => ({
-  albums: many(artistAlbums),
-  songs: many(artistSongs)
-}));
-
-export const albumsRelations = relations(albums, ({ many }) => ({
-  songs: many(songs),
-  artists: many(artistAlbums)
-}));
-
-export const songsRelations = relations(songs, ({ one, many }) => ({
-  album: one(albums, {
-    fields: [songs.albumId],
-    references: [albums.id]
-  }),
-  artists: many(artistSongs),
-  playlists: many(playlistSongs)
-}));
-
-export const playlistsRelations = relations(playlists, ({ many }) => ({
-  songs: many(playlistSongs)
-}));

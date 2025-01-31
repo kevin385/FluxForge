@@ -12,12 +12,12 @@ importers:
         specifier: ^4.6.15
         version: 4.6.15
       sst:
-        specifier: ^3.4.32
-        version: 3.4.32(hono@4.6.15)
+        specifier: ^3.6.40
+        version: 3.6.40
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20241224.0
-        version: 4.20241224.0
+        specifier: ^4.20250129.0
+        version: 4.20250129.0
       '@tsconfig/node22':
         specifier: ^22.0.0
         version: 22.0.0
@@ -42,21 +42,15 @@ importers:
       '@hono/zod-openapi':
         specifier: ^0.18.3
         version: 0.18.3(hono@4.6.15)(zod@3.24.1)
-      sst:
-        specifier: '*'
-        version: 3.4.32(hono@4.6.15)
 
   packages/core:
     dependencies:
       drizzle-orm:
         specifier: ^0.38.3
-        version: 0.38.3(@cloudflare/workers-types@4.20241224.0)(@types/react@18.3.12)(react@18.3.1)
+        version: 0.38.3(@cloudflare/workers-types@4.20250129.0)(@types/react@18.3.12)(react@18.3.1)
       drizzle-zod:
         specifier: ^0.6.1
-        version: 0.6.1(drizzle-orm@0.38.3(@cloudflare/workers-types@4.20241224.0)(@types/react@18.3.12)(react@18.3.1))(zod@3.24.1)
-      sst:
-        specifier: '*'
-        version: 3.4.32(hono@4.6.15)
+        version: 0.6.1(drizzle-orm@0.38.3(@cloudflare/workers-types@4.20250129.0)(@types/react@18.3.12)(react@18.3.1))(zod@3.24.1)
       zod:
         specifier: ^3.24.1
         version: 3.24.1
@@ -95,8 +89,8 @@ packages:
     peerDependencies:
       zod: ^3.20.2
 
-  '@cloudflare/workers-types@4.20241224.0':
-    resolution: {integrity: sha512-1ZmFc8qqM7S/HUGmLplc4P8n8DoMqiJmc47r9Lr7VbuaotoqCXVljz09w1V1mc4K3pbFPgvqSy4XYStZ08HrlQ==}
+  '@cloudflare/workers-types@4.20250129.0':
+    resolution: {integrity: sha512-H7g/sDB9GaV+fIPf3utNEYncFhryIvDThiBbfZtu0bZmVXcVd9ApP3OMqUYhNV8MShWQASvgWletKKBZGT9/oA==}
 
   '@drizzle-team/brocli@0.10.2':
     resolution: {integrity: sha512-z33Il7l5dKjUgGULTqBsQBQwckHh5AbIuxhdsIxDDiZAzBOrZO6q9ogcWC65kU382AfynTfgNumVcNIjuIua6w==}
@@ -1132,42 +1126,34 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@3.4.32:
-    resolution: {integrity: sha512-0TRLGIGUybnPw3Uqu9EWxMq/wj4/CFCt5M7ZhQNiOGderdoda5aosyGBCfjFzVsT2uJint1HIgvQHH87zVmJFg==}
+  sst-darwin-arm64@3.6.40:
+    resolution: {integrity: sha512-cLyvyOhvXhpbpnGMMQLyKY6FH7F4kFmjqUFCC930DkDWaBdoPb0/Qrqwj6/diEkcGQMHU+xQ/R/erGOJ/nePbg==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@3.4.32:
-    resolution: {integrity: sha512-7KT7/cFPLUFqw2ewLy78ZhjeILZz8XmFxDRPBY0F5P3Bv5yDfgi81sHCehX+knDO9LbJrcVm4wKUgbIotEYsJg==}
+  sst-darwin-x64@3.6.40:
+    resolution: {integrity: sha512-o1zABkQCW+DKRQVKSe9YiHkGBSjJImiTtPIR9s/W7ee3InTPkTginyjG7UjQH7X/RRQemZ3FyscoQnOs2Tj9Jg==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@3.4.32:
-    resolution: {integrity: sha512-mNcy0VBRtavtAF15frAMgMqBqXqrhLPFeHTm9r/BkXhnDus4+G59PR4xKXs95Z959FRGkwO0uPQ/XMXQc7hqHg==}
+  sst-linux-arm64@3.6.40:
+    resolution: {integrity: sha512-8fNbheg8jmaF7GMu8sgbQsznLr251WvtdIHV67Owt5GnoZceb5uN46zD8THsOSMVLKKFJj5Ror21rBsROqxlEg==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@3.4.32:
-    resolution: {integrity: sha512-uJNNOkYqWOr0YRqdzNPE3Vo0HGvgQfFYg/n8KJQWSd/fTy3GOewcPRBOWGOJYPlMeTJod5/4Ck60ZTx2XRG/Ow==}
+  sst-linux-x64@3.6.40:
+    resolution: {integrity: sha512-l5bYtI0aQ1jltoR/UZSqqAdPyJHUYfEQCAzCRcISSegjxdcjcpeALCMEkYGYmRDq8jq4OYEQ2vlESGxJhIII9w==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@3.4.32:
-    resolution: {integrity: sha512-WPchLYZfrmGP1Tor+D1a9XkWMV6Nph0Gn6u9XRfjDr9K+6xjAoTU21tLm3YCEAv9/f09QV7djhx1BUX4ONrd2w==}
+  sst-linux-x86@3.6.40:
+    resolution: {integrity: sha512-hg25XPCcoCV0VhaIRphwk4Cj0Xbc4s1p39qDMZ6TtaMku4BTecXeGu0QKQtH33y1ZjD0et2Lf9PKQpSiF++2cA==}
     cpu: [x86]
     os: [linux]
 
-  sst@3.4.32:
-    resolution: {integrity: sha512-UwQj8spkUAwUSkNz0Y10RO5ehohgiOXw0CnNuKNoAirUQHMGvKUIkoSXmLXGoqZvpTVy80rBMTAsICQa2XoTNw==}
+  sst@3.6.40:
+    resolution: {integrity: sha512-6XarTLJ11JCBQUXOsfT/MmQL6qJPubv/rhY2BSRwkPtGpd6Mwr8i8XgG24W8iiXdex+R9sjnWB8KLY5IPE249g==}
     hasBin: true
-    peerDependencies:
-      hono: 4.x
-      valibot: 0.30.x
-    peerDependenciesMeta:
-      hono:
-        optional: true
-      valibot:
-        optional: true
 
   streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
@@ -1275,7 +1261,7 @@ snapshots:
       openapi3-ts: 4.4.0
       zod: 3.24.1
 
-  '@cloudflare/workers-types@4.20241224.0': {}
+  '@cloudflare/workers-types@4.20250129.0': {}
 
   '@drizzle-team/brocli@0.10.2': {}
 
@@ -1722,15 +1708,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.3(@cloudflare/workers-types@4.20241224.0)(@types/react@18.3.12)(react@18.3.1):
+  drizzle-orm@0.38.3(@cloudflare/workers-types@4.20250129.0)(@types/react@18.3.12)(react@18.3.1):
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241224.0
+      '@cloudflare/workers-types': 4.20250129.0
       '@types/react': 18.3.12
       react: 18.3.1
 
-  drizzle-zod@0.6.1(drizzle-orm@0.38.3(@cloudflare/workers-types@4.20241224.0)(@types/react@18.3.12)(react@18.3.1))(zod@3.24.1):
+  drizzle-zod@0.6.1(drizzle-orm@0.38.3(@cloudflare/workers-types@4.20250129.0)(@types/react@18.3.12)(react@18.3.1))(zod@3.24.1):
     dependencies:
-      drizzle-orm: 0.38.3(@cloudflare/workers-types@4.20241224.0)(@types/react@18.3.12)(react@18.3.1)
+      drizzle-orm: 0.38.3(@cloudflare/workers-types@4.20250129.0)(@types/react@18.3.12)(react@18.3.1)
       zod: 3.24.1
 
   eastasianwidth@0.2.0: {}
@@ -2076,33 +2062,32 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  sst-darwin-arm64@3.4.32:
+  sst-darwin-arm64@3.6.40:
     optional: true
 
-  sst-darwin-x64@3.4.32:
+  sst-darwin-x64@3.6.40:
     optional: true
 
-  sst-linux-arm64@3.4.32:
+  sst-linux-arm64@3.6.40:
     optional: true
 
-  sst-linux-x64@3.4.32:
+  sst-linux-x64@3.6.40:
     optional: true
 
-  sst-linux-x86@3.4.32:
+  sst-linux-x86@3.6.40:
     optional: true
 
-  sst@3.4.32(hono@4.6.15):
+  sst@3.6.40:
     dependencies:
       aws4fetch: 1.0.19
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
-      hono: 4.6.15
-      sst-darwin-arm64: 3.4.32
-      sst-darwin-x64: 3.4.32
-      sst-linux-arm64: 3.4.32
-      sst-linux-x64: 3.4.32
-      sst-linux-x86: 3.4.32
+      sst-darwin-arm64: 3.6.40
+      sst-darwin-x64: 3.6.40
+      sst-linux-arm64: 3.6.40
+      sst-linux-x64: 3.6.40
+      sst-linux-x86: 3.6.40
 
   streamsearch@1.1.0: {}
 

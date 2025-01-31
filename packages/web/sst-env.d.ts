@@ -2,31 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /* deno-fmt-ignore-file */
+
+/// <reference path="../../sst-env.d.ts" />
+
 import "sst"
 export {}
-declare module "sst" {
-  export interface Resource {
-    "API": {
-      "type": "sst.cloudflare.Worker"
-      "url": string
-    }
-    "CLOUDFLARE_ACCOUNT_ID": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
-    "CLOUDFLARE_API_TOKEN": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
-    "DATABASE_ID": {
-      "type": "sst.sst.Secret"
-      "value": string
-    }
-    "Database": {
-      "type": "sst.cloudflare.D1"
-    }
-    "MusicBucket": {
-      "type": "sst.cloudflare.Bucket"
-    }
-  }
-}

@@ -1,8 +1,8 @@
 export const web = (api: sst.cloudflare.Worker) =>
-  new sst.x.DevCommand("Web", {
-    link: [api],
-    dev: {
-      autostart: true,
-      command: "pnpm dev:web"
+  new sst.cloudflare.StaticSite("Web", {
+    path: "packages/web",
+    build: { command: "pnpm build", output: "out" },
+    environment: {
+      API_URL: api.url
     }
   });

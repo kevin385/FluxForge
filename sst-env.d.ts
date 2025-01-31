@@ -2,8 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /* deno-fmt-ignore-file */
-import "sst"
-export {}
+
 import "sst"
 declare module "sst" {
   export interface Resource {
@@ -19,6 +18,10 @@ declare module "sst" {
       "type": "sst.sst.Secret"
       "value": string
     }
+    "Web": {
+      "type": "sst.cloudflare.StaticSite"
+      "url": string
+    }
   }
 }
 // cloudflare 
@@ -30,3 +33,6 @@ declare module "sst" {
     "MusicBucket": cloudflare.R2Bucket
   }
 }
+
+import "sst"
+export {}
